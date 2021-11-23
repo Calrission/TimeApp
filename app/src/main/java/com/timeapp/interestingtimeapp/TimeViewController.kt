@@ -14,8 +14,7 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
 
     private val onTimeChanged = object: OnTimeChanged {
         override fun onTimeChanged(hours: Int, minutes: Int) {
-            setHourToXML(hours)
-            changeStateHour(hours)
+            updateTime(hours, minutes)
 
             lastHour = hours
             lastMinutes = minutes
@@ -33,6 +32,13 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
     init {
         registerReceiver()
         firstGetTime()
+    }
+
+    fun updateTime(hours: Int, minutes: Int){
+        if (lastHour != hours) {
+            setHourToXML(hours)
+            changeStateHour(hours)
+        }
     }
 
     private fun firstGetTime(){
@@ -60,7 +66,7 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
     }
 
     private fun activationBasicHour(hour: Int){
-        val ids = BASIC_HOUR_NUM_CODE[hour.toString()]!!
+        val ids = BASIC_HOUR_NUM_CODE[hour.toString()]!!.toMutableList()
         activatingHours(ids)
     }
 
@@ -72,23 +78,24 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
     }
 
     private fun getIdsSecondPartHour(hour: String): MutableList<Int> {
-        return if (hour.toInt() < 20)
-                    EXPAND_CODE["надцать"]!!
-                else
-                    BASIC_HOUR_NUM_CODE[hour[1].toString()]!!
-
+        return if (hour.toInt() == 20) arrayListOf()
+                else if (hour.toInt() < 20)
+                            EXPAND_CODE["надцать"]!!
+                        else
+                            BASIC_HOUR_NUM_CODE[hour[1].toString()]!!
     }
 
     private fun changeStateHour(hour: Int){
         val idsState =
-        if (hour == 1 || hour == 21)
+            (if (hour == 1 || hour == 21)
             STATE_HOUR_CODE["час"]!!
-        else
-            if (hour in 2..4 || hour in 22..23)
-                STATE_HOUR_CODE["часа"]!!
             else
-                STATE_HOUR_CODE["часов"]!!
+                if (hour in 2..4 || hour in 22..23)
+                    STATE_HOUR_CODE["часа"]!!
+                else
+                    STATE_HOUR_CODE["часов"]!!).toMutableList()
 
+        shutdownItem(activatedIdsStateHour)
         activatingItem(idsState)
         replaceActivatedStateHour(idsState)
     }
@@ -98,12 +105,12 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
 
         if (hour.toInt() < 20) {
             val basicHour = hour[1].toString()
-            ids = if (basicHour != "2")
+            ids = (if (basicHour != "2")
                 BASIC_HOUR_NUM_CODE[basicHour]!!
             else
-                EXPAND_CODE["две"]!!
+                EXPAND_CODE["две"]!!).toMutableList()
 
-            if (basicHour != "1" || basicHour != "3")
+            if (basicHour != "1" && basicHour != "3" && basicHour != "2")
                 ids.removeAt(ids.size - 1)
         }else{
             ids = (BASIC_HOUR_NUM_CODE["2"]!! + EXPAND_CODE["дцать"]!!).toMutableList()
@@ -114,14 +121,22 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
 
     private fun activatingItem(ids: List<Int>){
         ids.forEach { id ->
-            val num = context.findViewById<TextView>(id)
-            num.setTextColor(context.getColor(R.color.colorActivationText))
+            val item = context.findViewById<TextView>(id)
+            item.setTextColor(context.getColor(R.color.colorActivationText))
         }
     }
 
     private fun activatingHours(ids: List<Int>){
+        shutdownItem(activatedIdsHour)
         activatingItem(ids)
         replaceActivatedHours(ids)
+    }
+
+    private fun shutdownItem(ids: List<Int>){
+        ids.forEach { id ->
+            val item = context.findViewById<TextView>(id)
+            item.setTextColor(context.getColor(R.color.colorNoActivationText))
+        }
     }
 
     private fun replaceActivatedHours(ids: List<Int>){

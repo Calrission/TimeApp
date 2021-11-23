@@ -253,7 +253,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:letterSpacing="0.9"
-                android:text="ь"
+                android:text="я"
                 android:textAllCaps="true"
                 android:textColor="@color/colorNoActivationText"
                 android:textSize="22sp" />
@@ -421,8 +421,7 @@
                 android:text="т"
                 android:textAllCaps="true"
                 android:textColor="@color/colorNoActivationText"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/l4_c2"
