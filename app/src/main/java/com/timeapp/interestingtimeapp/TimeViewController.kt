@@ -40,7 +40,7 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
             changeStateHour(hours)
         }
         if (lastMinutes != minutes){
-            //activationMinutes(getIdsNum(minutes, MODE_NUM_MINUTES))
+            activationMinutes(getIdsNum(minutes, MODE_NUM_MINUTES))
         }
     }
 
@@ -85,7 +85,7 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
     private fun getIdsSecondPartHardNum(num: String, mode: Int): MutableList<Int> {
         val expand = (if (mode == MODE_NUM_HOUR) EXPAND_CODE_HOUR else EXPAND_CODE_MINUTES)
         return when {
-            num.toInt() == 20 -> arrayListOf()
+            num.toInt() % 10 == 0 -> arrayListOf()
             num.toInt() < 20 -> expand["надцать"]!!.toMutableList()
             else -> getIdsHardSecondPartHardNum(num[1].toString().toInt(), mode).toMutableList()
         }

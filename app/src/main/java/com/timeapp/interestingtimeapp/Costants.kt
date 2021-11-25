@@ -31,21 +31,32 @@ val BASIC_HOUR_NUM_CODE = mapOf(
 )
 
 val BASIC_MINUTES_NUM_CODE = mapOf<String, MutableList<Int>>(
-
+    "0" to arrayListOf(IDS_ALL_ITEMS[8][9]),
+    "1" to arrayListOf(),
+    "2" to arrayListOf(IDS_ALL_ITEMS[6][5], IDS_ALL_ITEMS[6][6], IDS_ALL_ITEMS[6][7]),
+    "3" to arrayListOf(IDS_ALL_ITEMS[6][10], IDS_ALL_ITEMS[6][9], IDS_ALL_ITEMS[6][8]),
+    "4" to arrayListOf(),
+    "5" to arrayListOf(IDS_ALL_ITEMS[9][0], IDS_ALL_ITEMS[9][1], IDS_ALL_ITEMS[9][2], IDS_ALL_ITEMS[9][3]),
+    "6" to arrayListOf(),
+    "7" to arrayListOf(),
+    "8" to arrayListOf(),
+    "9" to arrayListOf(),
+    "10" to arrayListOf(IDS_ALL_ITEMS[8][1], IDS_ALL_ITEMS[8][2], IDS_ALL_ITEMS[8][3], IDS_ALL_ITEMS[8][4], IDS_ALL_ITEMS[8][5], IDS_ALL_ITEMS[9][3])
 )
 
 val EXPAND_CODE_HOUR = mapOf(
-    "н" to arrayListOf(IDS_ALL_ITEMS[2][3]),
-    "на" to arrayListOf(IDS_ALL_ITEMS[2][4], IDS_ALL_ITEMS[2][5]),
     "дцать" to arrayListOf(IDS_ALL_ITEMS[2][6], IDS_ALL_ITEMS[2][7], IDS_ALL_ITEMS[2][8], IDS_ALL_ITEMS[2][9], IDS_ALL_ITEMS[2][10]),
     "надцать" to arrayListOf(IDS_ALL_ITEMS[2][4], IDS_ALL_ITEMS[2][5], IDS_ALL_ITEMS[2][6], IDS_ALL_ITEMS[2][7], IDS_ALL_ITEMS[2][8], IDS_ALL_ITEMS[2][9], IDS_ALL_ITEMS[2][10]),
     "две" to arrayListOf(IDS_ALL_ITEMS[1][6], IDS_ALL_ITEMS[1][7], IDS_ALL_ITEMS[1][8]),
-    "десят" to arrayListOf(IDS_ALL_ITEMS[9][1], IDS_ALL_ITEMS[9][2], IDS_ALL_ITEMS[9][3], IDS_ALL_ITEMS[9][4], IDS_ALL_ITEMS[9][5])
 )
 
-val EXPAND_CODE_MINUTES = mapOf<String, List<Int>>(
-    "сорок" to arrayListOf<Int>(),
-    "десят" to arrayListOf<Int>(),
+val EXPAND_CODE_MINUTES = mapOf(
+    "дцать" to arrayListOf(IDS_ALL_ITEMS[7][5], IDS_ALL_ITEMS[7][6], IDS_ALL_ITEMS[7][7], IDS_ALL_ITEMS[7][8], IDS_ALL_ITEMS[7][9]),
+    "надцать" to arrayListOf(IDS_ALL_ITEMS[7][3], IDS_ALL_ITEMS[7][4], IDS_ALL_ITEMS[7][5], IDS_ALL_ITEMS[7][6], IDS_ALL_ITEMS[7][7], IDS_ALL_ITEMS[7][8], IDS_ALL_ITEMS[7][9]),
+    "две" to arrayListOf(),
+    "десят" to arrayListOf(IDS_ALL_ITEMS[9][1], IDS_ALL_ITEMS[9][2], IDS_ALL_ITEMS[9][3], IDS_ALL_ITEMS[9][4], IDS_ALL_ITEMS[9][5]),
+    "40" to arrayListOf(IDS_ALL_ITEMS[9][6], IDS_ALL_ITEMS[9][7], IDS_ALL_ITEMS[9][8], IDS_ALL_ITEMS[9][9], IDS_ALL_ITEMS[9][10]),
+    "5v2" to arrayListOf(IDS_ALL_ITEMS[7][0], IDS_ALL_ITEMS[7][1], IDS_ALL_ITEMS[7][2], IDS_ALL_ITEMS[7][3], IDS_ALL_ITEMS[8][0]),
 )
 
 val STATE_HOUR_CODE = mapOf(
