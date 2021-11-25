@@ -76,15 +76,19 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
         val idsFirstPartHard = getIdsFirstPartHardNum(num.toString(), mode)
         val idsSecondPartHard = getIdsSecondPartHardNum(num.toString(), mode)
 
+        if (num in 11..19 && num != 11 && num != 13 && num != 12)
+            idsFirstPartHard.removeAt(idsFirstPartHard.size - 1)
+
         return idsFirstPartHard + idsSecondPartHard
     }
 
     private fun getIdsSecondPartHardNum(num: String, mode: Int): MutableList<Int> {
-        return if (num.toInt() == 20) arrayListOf()
-                else if (num.toInt() < 20)
-                            (if (mode == MODE_NUM_HOUR) EXPAND_CODE_HOUR else EXPAND_CODE_MINUTES)["надцать"]!!
-                        else
-                            (if (mode == MODE_NUM_HOUR) BASIC_HOUR_NUM_CODE else BASIC_MINUTES_NUM_CODE)[num[1].toString()]!!
+        val expand = (if (mode == MODE_NUM_HOUR) EXPAND_CODE_HOUR else EXPAND_CODE_MINUTES)
+        return when {
+            num.toInt() == 20 -> arrayListOf()
+            num.toInt() < 20 -> expand["надцать"]!!.toMutableList()
+            else -> getIdsHardSecondPartHardNum(num[1].toString().toInt(), mode).toMutableList()
+        }
     }
 
     private fun changeStateHour(hour: Int){
@@ -106,28 +110,33 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
     }
 
     private fun getIdsFirstPartHardNum(num: String, mode: Int): MutableList<Int>{
-        val ids: MutableList<Int>
+        val expand = (if (mode == MODE_NUM_HOUR) EXPAND_CODE_HOUR else EXPAND_CODE_MINUTES)
+        return if (num.toInt() < 20)
+                if (num != "12") getIdsBasicNum(num[1].toString().toInt(), mode).toMutableList() else expand["две"]!!.toMutableList()
+            else
+                getIdsHardFirstPartHardNum(num[0].toString().toInt(), mode).toMutableList()
+    }
+
+    private fun getIdsHardSecondPartHardNum(secondNumPart: Int, mode: Int): List<Int> {
         val basic = (if (mode == MODE_NUM_HOUR) BASIC_HOUR_NUM_CODE else BASIC_MINUTES_NUM_CODE)
         val expand = (if (mode == MODE_NUM_HOUR) EXPAND_CODE_HOUR else EXPAND_CODE_MINUTES)
 
-        if (num.toInt() < 20) {
-            val basicNum = num[1].toString()
-            ids = (if (basicNum != "2")
-                basic[basicNum]!!
-            else
-                expand["две"]!!).toMutableList()
-
-            if (basicNum != "1" && basicNum != "3" && basicNum != "2")
-                ids.removeAt(ids.size - 1)
-        }else{
-            ids = (basic["2"]!! + expand["дцать"]!!).toMutableList()
-        }
-
-        return ids
+        //При 22 часах будет "двадцать две" т.к. "два" уже используется в "двадцать"
+        return (if (secondNumPart != 2)
+            basic[secondNumPart.toString()]!!.toMutableList()
+        else
+            expand["две"]!!).toMutableList()
     }
 
-    private fun getIdsNumInRange20to60(num: Int){
+    private fun getIdsHardFirstPartHardNum(firstNumPart: Int, mode: Int): List<Int>{
+        val basic = (if (mode == MODE_NUM_HOUR) BASIC_HOUR_NUM_CODE else BASIC_MINUTES_NUM_CODE)
+        val expand = (if (mode == MODE_NUM_HOUR) EXPAND_CODE_HOUR else EXPAND_CODE_MINUTES)
 
+        return if (firstNumPart == 4){
+            expand["сорок"]!!.toMutableList()
+        }else{
+            (basic[firstNumPart.toString()]!! + expand[(if (firstNumPart == 5) "десят" else "дцать" )]!!).toMutableList()
+        }
     }
 
     private fun activatingItem(ids: List<Int>){

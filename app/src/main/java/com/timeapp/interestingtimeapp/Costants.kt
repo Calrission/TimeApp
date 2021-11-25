@@ -1,7 +1,7 @@
 package com.timeapp.interestingtimeapp
 
-val MODE_NUM_HOUR = 0
-val MODE_NUM_MINUTES = 1
+const val MODE_NUM_HOUR = 0
+const val MODE_NUM_MINUTES = 1
 
 val IDS_ALL_ITEMS = arrayListOf(
     arrayListOf(R.id.l1_c7, R.id.l1_c8, R.id.l1_c9, R.id.l1_c10, R.id.l1_c11),
@@ -43,8 +43,9 @@ val EXPAND_CODE_HOUR = mapOf(
     "десят" to arrayListOf(IDS_ALL_ITEMS[9][1], IDS_ALL_ITEMS[9][2], IDS_ALL_ITEMS[9][3], IDS_ALL_ITEMS[9][4], IDS_ALL_ITEMS[9][5])
 )
 
-val EXPAND_CODE_MINUTES = mapOf<String, MutableList<Int>>(
-
+val EXPAND_CODE_MINUTES = mapOf<String, List<Int>>(
+    "сорок" to arrayListOf<Int>(),
+    "десят" to arrayListOf<Int>(),
 )
 
 val STATE_HOUR_CODE = mapOf(

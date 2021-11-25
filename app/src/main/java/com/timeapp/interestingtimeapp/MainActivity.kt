@@ -18,14 +18,18 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-//        var count = 0
-//        time.setOnClickListener {
-//            timeViewController.updateTime(count, 0)
-//            if (count == 23)
-//                count = 0
-//            else
-//                count += 1
-//        }
+        //activationTestHour()
+    }
+
+    private fun activationTestHour(){
+        var count = 0
+        time.setOnClickListener {
+            timeViewController.updateTime(count, 0)
+            if (count == 23)
+                count = 0
+            else
+                count += 1
+        }
     }
 
     override fun onStop() {
