@@ -923,5 +923,428 @@
                 android:textColor="@color/colorNoActivationText"
                 android:textSize="22sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="11">
+
+            <TextView
+                android:id="@+id/l8_c1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="п"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="я"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="т"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="н"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="а"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="д"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="ц"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="а"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="т"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="ь"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l8_c11"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="л"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="11">
+
+            <TextView
+                android:id="@+id/l9_c1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="ь"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="д"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="е"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="с"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="я"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="т"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="с"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="о"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="р"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="о"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l9_c11"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="к"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="11">
+
+            <TextView
+                android:id="@+id/l10_c1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="п"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="я"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="т"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="ь"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="к"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="а"
+                android:textAllCaps="true"
+                android:textColor="@color/colorNoActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="м"
+                android:textAllCaps="true"
+                android:textColor="@color/colorActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="и"
+                android:textAllCaps="true"
+                android:textColor="@color/colorActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="н"
+                android:textAllCaps="true"
+                android:textColor="@color/colorActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="у"
+                android:textAllCaps="true"
+                android:textColor="@color/colorActivationText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/l10_c11"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:letterSpacing="0.9"
+                android:text="т"
+                android:textAllCaps="true"
+                android:textColor="@color/colorActivationText"
+                android:textSize="22sp" />
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

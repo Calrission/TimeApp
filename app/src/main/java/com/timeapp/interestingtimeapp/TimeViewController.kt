@@ -36,8 +36,11 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
 
     fun updateTime(hours: Int, minutes: Int){
         if (lastHour != hours) {
-            setHourToXML(hours)
+            activatingHours(getIdsNum(hours, MODE_NUM_HOUR))
             changeStateHour(hours)
+        }
+        if (lastMinutes != minutes){
+            //activationMinutes(getIdsNum(minutes, MODE_NUM_MINUTES))
         }
     }
 
@@ -58,65 +61,73 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
         context.unregisterReceiver(timeChangeReceiver)
     }
 
-    private fun setHourToXML(hour: Int){
-        if (hour in 0..10)
-            activationBasicHour(hour)
+    private fun getIdsNum(num: Int, mode: Int): List<Int> {
+        return if (num in 0..10)
+            getIdsBasicNum(num, mode)
         else
-            activationHardHour(hour)
+            getIdsHardNum(num, mode)
     }
 
-    private fun activationBasicHour(hour: Int){
-        val ids = BASIC_HOUR_NUM_CODE[hour.toString()]!!.toMutableList()
-        activatingHours(ids)
+    private fun getIdsBasicNum(num: Int, mode: Int): List<Int>{
+        return (if (mode == MODE_NUM_HOUR) BASIC_HOUR_NUM_CODE else BASIC_MINUTES_NUM_CODE)[num.toString()]!!.toMutableList()
     }
 
-    private fun activationHardHour(hour: Int){
-        val idsFirstPartHardHour = getIdsFirstPartHour(hour.toString())
-        val idsSecondPartHardHour = getIdsSecondPartHour(hour.toString())
+    private fun getIdsHardNum(num: Int, mode: Int): List<Int>{
+        val idsFirstPartHard = getIdsFirstPartHardNum(num.toString(), mode)
+        val idsSecondPartHard = getIdsSecondPartHardNum(num.toString(), mode)
 
-        activatingHours(idsFirstPartHardHour + idsSecondPartHardHour)
+        return idsFirstPartHard + idsSecondPartHard
     }
 
-    private fun getIdsSecondPartHour(hour: String): MutableList<Int> {
-        return if (hour.toInt() == 20) arrayListOf()
-                else if (hour.toInt() < 20)
-                            EXPAND_CODE["надцать"]!!
+    private fun getIdsSecondPartHardNum(num: String, mode: Int): MutableList<Int> {
+        return if (num.toInt() == 20) arrayListOf()
+                else if (num.toInt() < 20)
+                            (if (mode == MODE_NUM_HOUR) EXPAND_CODE_HOUR else EXPAND_CODE_MINUTES)["надцать"]!!
                         else
-                            BASIC_HOUR_NUM_CODE[hour[1].toString()]!!
+                            (if (mode == MODE_NUM_HOUR) BASIC_HOUR_NUM_CODE else BASIC_MINUTES_NUM_CODE)[num[1].toString()]!!
     }
 
     private fun changeStateHour(hour: Int){
-        val idsState =
-            (if (hour == 1 || hour == 21)
-            STATE_HOUR_CODE["час"]!!
-            else
-                if (hour in 2..4 || hour in 22..23)
-                    STATE_HOUR_CODE["часа"]!!
-                else
-                    STATE_HOUR_CODE["часов"]!!).toMutableList()
+        val idsState = getNowHourState(hour)
 
         shutdownItem(activatedIdsStateHour)
         activatingItem(idsState)
         replaceActivatedStateHour(idsState)
     }
 
-    private fun getIdsFirstPartHour(hour: String): MutableList<Int>{
-        val ids: MutableList<Int>
-
-        if (hour.toInt() < 20) {
-            val basicHour = hour[1].toString()
-            ids = (if (basicHour != "2")
-                BASIC_HOUR_NUM_CODE[basicHour]!!
+    private fun getNowHourState(hour: Int): MutableList<Int>{
+        return (if (hour == 1 || hour == 21)
+                STATE_HOUR_CODE["час"]!!
             else
-                EXPAND_CODE["две"]!!).toMutableList()
+                if (hour in 2..4 || hour in 22..23)
+                    STATE_HOUR_CODE["часа"]!!
+                else
+                    STATE_HOUR_CODE["часов"]!!).toMutableList()
+    }
 
-            if (basicHour != "1" && basicHour != "3" && basicHour != "2")
+    private fun getIdsFirstPartHardNum(num: String, mode: Int): MutableList<Int>{
+        val ids: MutableList<Int>
+        val basic = (if (mode == MODE_NUM_HOUR) BASIC_HOUR_NUM_CODE else BASIC_MINUTES_NUM_CODE)
+        val expand = (if (mode == MODE_NUM_HOUR) EXPAND_CODE_HOUR else EXPAND_CODE_MINUTES)
+
+        if (num.toInt() < 20) {
+            val basicNum = num[1].toString()
+            ids = (if (basicNum != "2")
+                basic[basicNum]!!
+            else
+                expand["две"]!!).toMutableList()
+
+            if (basicNum != "1" && basicNum != "3" && basicNum != "2")
                 ids.removeAt(ids.size - 1)
         }else{
-            ids = (BASIC_HOUR_NUM_CODE["2"]!! + EXPAND_CODE["дцать"]!!).toMutableList()
+            ids = (basic["2"]!! + expand["дцать"]!!).toMutableList()
         }
 
         return ids
+    }
+
+    private fun getIdsNumInRange20to60(num: Int){
+
     }
 
     private fun activatingItem(ids: List<Int>){
@@ -132,6 +143,12 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
         replaceActivatedHours(ids)
     }
 
+    private fun activationMinutes(ids: List<Int>){
+        shutdownItem(activatedIdsMinutes)
+        activatingItem(ids)
+        replaceActivatedMinutes(ids)
+    }
+
     private fun shutdownItem(ids: List<Int>){
         ids.forEach { id ->
             val item = context.findViewById<TextView>(id)
@@ -142,6 +159,11 @@ class TimeViewController(private val context: Activity, onChangeText: OnTimeChan
     private fun replaceActivatedHours(ids: List<Int>){
         activatedIdsHour.clear()
         activatedIdsHour.addAll(ids)
+    }
+
+    private fun replaceActivatedMinutes(ids: List<Int>){
+        activatedIdsMinutes.clear()
+        activatedIdsMinutes.addAll(ids)
     }
 
     private fun replaceActivatedStateHour(ids: List<Int>){
